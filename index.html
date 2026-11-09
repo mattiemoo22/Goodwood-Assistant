@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Goodwood Video &amp; Stream Assistant</title>
+<title>Goodwood Setup Assistant</title>
 <style>
 :root{--bg:#f6f5f2;--surface:#fff;--ink:#1d1d1b;--mute:#6b6a66;--line:#e4e2dc;--accent:#2d5be3;--accent-ink:#fff;--bot:#fff;--you:#2d5be3;--chip:#eaf0ff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141413;--surface:#1f1f1d;--ink:#f1efe9;--mute:#9a988f;--line:#33332f;--accent:#7b9bff;--accent-ink:#0d1330;--bot:#232321;--you:#3a5fd6;--chip:#222c4d}}
@@ -24,7 +24,7 @@ button.send{border:0;background:var(--accent);color:var(--accent-ink);font:inher
 button:disabled{opacity:.5}
 </style></head>
 <body>
-<header><div class="logo">🎥</div><div><h1>Goodwood Video &amp; Stream</h1><small>Setup troubleshooting</small></div></header>
+<header><div class="logo">🎥</div><div><h1>Goodwood Setup</h1><small>Video, stream &amp; lighting troubleshooting</small></div></header>
 <main id="chat"></main>
 <form id="f"><input type="text" id="q" placeholder="What’s going wrong?" autocomplete="off"><button class="send" id="go">Ask</button></form>
 <script>
@@ -36,7 +36,7 @@ function add(role,html){const d=document.createElement("div");d.className="msg "
 (function(){
   add("bot","Hi! Tell me what’s going wrong, or what you need to connect, and I’ll give you the quick answer.");
   const c=document.createElement("div");c.className="chips";
-  ["The screens are flickering","Stage display isn’t on Multiview","There’s no power","Where’s the stage bug?","Birddog isn’t working","How do I pack down?"].forEach(t=>{const b=document.createElement("button");b.className="chip";b.textContent=t;b.onclick=()=>ask(t);c.appendChild(b)});
+  ["The screens are flickering","Birddog isn’t working","Where’s the stage bug?","There’s no haze","The Akai isn’t controlling anything","Light bar 2 is yellow"].forEach(t=>{const b=document.createElement("button");b.className="chip";b.textContent=t;b.onclick=()=>ask(t);c.appendChild(b)});
   chat.appendChild(c);
 })();
 async function ask(text){
